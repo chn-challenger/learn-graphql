@@ -25,7 +25,6 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-
   field :unit, Types::UnitType do
     description "Single unit"
     argument :id, types.String
@@ -37,10 +36,6 @@ Types::QueryType = GraphQL::ObjectType.define do
   field :courses, types[Types::CourseType] do
     description "All courses"
     resolve ->(obj, args, ctx) {
-      # puts '&&&&&&&&&&'
-      # p obj
-      # p Course.all
-      # puts '&&&&&&&&&&'
       Course.all
     }
   end
