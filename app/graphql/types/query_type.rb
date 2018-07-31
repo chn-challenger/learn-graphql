@@ -25,6 +25,15 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
+
+  field :unit, Types::UnitType do
+    description "Single unit"
+    argument :id, types.String
+    resolve ->(obj, args, ctx) {
+      Unit.find(args[:id])
+    }
+  end
+
   field :courses, types[Types::CourseType] do
     description "All courses"
     resolve ->(obj, args, ctx) {

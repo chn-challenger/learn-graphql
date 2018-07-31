@@ -9,5 +9,11 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
+    # p @course.units
+    # @course.units.create!(title:"Unit #{rand().round(3)}",
+    #   description:"Unit description #{'abc '*rand(10..20)}")
+    # @course.units.create!(title:"Unit #{rand().round(3)}",
+    #   description:"Unit description #{'abc '*rand(10..20)}")
+    @course
   end
 end
