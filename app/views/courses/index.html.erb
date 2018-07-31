@@ -1,0 +1,8 @@
+<p>
+  Some default stuff
+</p>
+<ul>
+  <% @courses.each do |course| %>
+    <li>  <%= link_to course.title, course_path(course)%></li>
+  <% end %>
+</ul>
